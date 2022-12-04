@@ -1,7 +1,17 @@
 ﻿
+
+if (args is not [var path] || !Path.Exists(path))
+{
+    Console.WriteLine("Missing path parameter.");
+    return -1;
+}
+
+var filePath = args[0];
+
+var elfsSnacksCalories = new List<int>();
 var totalScorePuzzle1 = 0;
 var totalScorePuzzle2 = 0;
-foreach (var strategy in File.ReadAllLines("input.txt"))
+foreach (var strategy in File.ReadAllLines(filePath))
 {
     if (strategy is [var opponentMove, _, var myMove])
     {
@@ -52,3 +62,5 @@ int GetMoveToPlay(int opponentMove, int resultOfGame)
         _ => throw new Exception("Unexpected combination of opponent move and result of game.")
     };
 }
+
+return 0;

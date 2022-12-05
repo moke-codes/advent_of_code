@@ -1,7 +1,7 @@
-﻿
+
 if (args is not [var path] || !Path.Exists(path))
 {
-    Console.WriteLine("Missing input file path. Either parameter was not correct passed or does not exist.");
+    Console.WriteLine("Missing input file path. Either parameter was not correctly passed or the file does not exist.");
     return -1;
 }
 

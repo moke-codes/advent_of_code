@@ -32,7 +32,7 @@ In the above example, the priority of the item type that appears in both compart
 
 Find the item type that appears in both compartments of each rucksack. What is the sum of the priorities of those item types?
 
-# Part Two 
+## Part Two 
 
 As you finish identifying the misplaced items, the Elves come to you with another issue.
 

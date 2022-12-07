@@ -17,8 +17,8 @@ foreach (var pairAssignment in pairAssignments)
     var firstAssignment = assignments[0].Split('-');
     var secondAssignment = assignments[1].Split('-');
 
-    (var firstMin, var firstMax) = GetValues(firstAssignment);
-    (var secondMin, var secondMax) = GetValues(secondAssignment);
+    var (firstMin, firstMax) = GetValues(firstAssignment);
+    var (secondMin, secondMax) = GetValues(secondAssignment);
 
     if (IsFullyContained(firstMin, firstMax, secondMin, secondMax))
         totalPuzzle1++;
@@ -35,13 +35,13 @@ return 0;
 static bool IsFullyContained(int firstMin, int firstMax, int secondMin, int secondMax)
 {
     return (firstMin >= secondMin && firstMax <= secondMax) ||
-        (secondMin >= firstMin && secondMax <= firstMax);
+           (secondMin >= firstMin && secondMax <= firstMax);
 }
 
 static bool Overlaps(int firstMin, int firstMax, int secondMin, int secondMax)
 {
     return (firstMin >= secondMin && secondMax >= firstMin) ||
-        (secondMin >= firstMin && firstMax >= secondMin);
+           (secondMin >= firstMin && firstMax >= secondMin);
 }
 
 static (int Min, int Max) GetValues(IList<string> assignment)
